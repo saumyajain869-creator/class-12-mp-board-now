@@ -1,182 +1,558 @@
+<</html>
 <!DOCTYPE html>
-<html>
+<html lang="hi">
 <head>
-    <title>Chapter 1 - Relations and Functions</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            font-family: Arial;
-            padding: 20px;
-            background: #f5f5f5;
-        }
+<title>Chapter 1 - संबंध एवं फलन</title>
 
-        h1 {
-            text-align: center;
-        }
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#222;
+}
 
-        button {
-            width: 100%;
-            padding: 15px;
-            margin: 6px 0;
-            font-size: 17px;
-            cursor: pointer;
-        }
+header{
+    background:#243b55;
+    color:white;
+    padding:22px 15px;
+    text-align:center;
+}
 
-        #content {
-            background: white;
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 8px;
-        }
-    </style>
+header h1{
+    margin:0;
+    font-size:25px;
+}
+
+.container{
+    max-width:850px;
+    margin:auto;
+    padding:15px;
+}
+
+.menu button{
+    width:100%;
+    padding:15px;
+    margin:7px 0;
+    border:0;
+    border-radius:10px;
+    background:white;
+    box-shadow:0 2px 7px #ccc;
+    font-size:17px;
+    text-align:left;
+}
+
+.page{
+    display:none;
+    background:white;
+    margin-top:15px;
+    padding:18px;
+    border-radius:12px;
+    box-shadow:0 2px 8px #ccc;
+    line-height:1.7;
+}
+
+.page h2{
+    color:#243b55;
+}
+
+.question{
+    padding:10px;
+    margin:10px 0;
+    background:#f1f5f9;
+    border-radius:8px;
+}
+
+.answer{
+    margin-top:5px;
+    color:#333;
+}
+
+.back{
+    background:#243b55 !important;
+    color:white;
+    text-align:center !important;
+}
+</style>
 </head>
 
 <body>
 
-<h1>📚 Chapter 1</h1>
-<h2>Relations and Functions</h2>
+<header>
+<h1>📐 Chapter 1</h1>
+<p>संबंध एवं फलन</p>
+</header>
 
-<button onclick="notes()">📖 Notes</button>
-<button onclick="important()">⭐ Important Questions</button>
-<button onclick="pyq()">📝 PYQ</button>
-<button onclick="dpp()">✍️ DPP Practice</button>
-<button onclick="revision()">🔄 Quick Revision</button>
-<button onclick="formulas()">📌 Formulas</button>
+<div class="container">
 
-<div id="content">
-    <p>ऊपर किसी भी button पर tap करके content खोलें.</p>
+<div class="menu">
+
+<button onclick="show('notes')">📖 Notes</button>
+
+<button onclick="show('important')">
+⭐ Important Questions
+</button>
+
+<button onclick="show('pyq')">
+📝 PYQ / Exam Questions
+</button>
+
+<button onclick="show('dpp')">
+✍️ DPP – 5 Sets
+</button>
+
+<button onclick="show('revision')">
+🔄 Quick Revision
+</button>
+
 </div>
+
+
+<!-- NOTES -->
+
+<div id="notes" class="page">
+
+<h2>📖 Notes – Part 1</h2>
+
+<h3>1. संबंध (Relation)</h3>
+
+<p>
+यदि A और B दो समुच्चय हैं, तो A×B के किसी उपसमुच्चय को A से B में संबंध कहते हैं।
+</p>
+
+<p>
+A×B को Cartesian Product कहते हैं।
+यदि A में m अवयव और B में n अवयव हैं, तो
+A×B में mn ordered pairs होंगे।
+</p>
+
+<h3>2. क्रमित युग्म</h3>
+
+<p>
+(a,b) एक ordered pair है जिसमें पहला अवयव a और दूसरा अवयव b होता है।
+</p>
+
+<p>
+दो ordered pairs (a,b) और (c,d) बराबर होंगे यदि
+a=c तथा b=d।
+</p>
+
+<h3>3. Cartesian Product</h3>
+
+<p>
+A×B = {(a,b) : a∈A और b∈B}
+</p>
+
+<p>
+उदाहरण:
+यदि A={1,2} तथा B={3,4}, तो
+</p>
+
+<p>
+A×B={(1,3),(1,4),(2,3),(2,4)}
+</p>
+
+<h3>4. संबंध के प्रकार</h3>
+
+<p>
+किसी समुच्चय A में संबंध R को विभिन्न प्रकारों में बाँटा जा सकता है।
+</p>
+
+<p>
+<strong>Reflexive:</strong>
+हर a∈A के लिए (a,a)∈R होना चाहिए।
+</p>
+
+<p>
+<strong>Symmetric:</strong>
+यदि (a,b)∈R है तो (b,a)∈R होना चाहिए।
+</p>
+
+<p>
+<strong>Transitive:</strong>
+यदि (a,b)∈R और (b,c)∈R है तो (a,c)∈R होना चाहिए।
+</p>
+
+<h3>5. फलन (Function)</h3>
+
+<p>
+A से B में संबंध f को function कहते हैं यदि A के प्रत्येक element का B में केवल एक image हो।
+</p>
+
+<p>
+इसे f:A→B लिखते हैं।
+</p>
+
+<h3>6. Domain, Codomain और Range</h3>
+
+<p>
+<strong>Domain:</strong> वे सभी input जिन पर function defined है।
+</p>
+
+<p>
+<strong>Codomain:</strong> जिस set में outputs लिए जाते हैं।
+</p>
+
+<p>
+<strong>Range:</strong> वास्तव में प्राप्त होने वाले outputs का set।
+</p>
+
+<hr>
+
+<h2>📖 Notes – Part 2</h2>
+
+<h3>7. One-One Function</h3>
+
+<p>
+यदि अलग-अलग inputs के images भी अलग-अलग हों, तो function one-one कहलाता है।
+</p>
+
+<p>
+यदि f(a)=f(b) से a=b प्राप्त हो, तो function one-one है।
+</p>
+
+<h3>8. Many-One Function</h3>
+
+<p>
+यदि दो या अधिक अलग-अलग inputs का image समान हो सकता है, तो function many-one कहलाता है।
+</p>
+
+<h3>9. Onto Function</h3>
+
+<p>
+यदि codomain का प्रत्येक element किसी न किसी domain element की image हो, तो function onto कहलाता है।
+</p>
+
+<h3>10. Into Function</h3>
+
+<p>
+यदि codomain के कुछ elements किसी भी input की image नहीं हैं, तो function into कहलाता है।
+</p>
+
+<h3>11. Into और Onto में अंतर</h3>
+
+<p>
+Onto function में पूरा codomain cover होता है, जबकि into function में codomain का कुछ भाग unused रह सकता है।
+</p>
+
+<h3>12. Identity Function</h3>
+
+<p>
+यदि f:A→A तथा प्रत्येक a∈A के लिए f(a)=a हो, तो इसे identity function कहते हैं।
+</p>
+
+<h3>13. Composite Function</h3>
+
+<p>
+यदि f:A→B और g:B→C हैं, तो g∘f एक composite function है।
+</p>
+
+<p>
+(g∘f)(x)=g(f(x))
+</p>
+
+<h3>14. Invertible Function</h3>
+
+<p>
+किसी function का inverse तभी function के रूप में प्राप्त किया जा सकता है जब उपयुक्त रूप से function one-one और onto हो।
+</p>
+
+<h3>15. महत्वपूर्ण बात</h3>
+
+<p>
+हर function एक relation है, लेकिन हर relation function नहीं होता।
+</p>
+
+</div>
+
+
+<!-- IMPORTANT -->
+
+<div id="important" class="page">
+
+<h2>⭐ Important Questions</h2>
+
+<div class="question">
+<b>Q1. संबंध की परिभाषा लिखिए।</b>
+<div class="answer">
+Ans. A×B के किसी उपसमुच्चय को A से B में संबंध कहते हैं।
+</div>
+</div>
+
+<div class="question">
+<b>Q2. फलन किसे कहते हैं?</b>
+<div class="answer">
+Ans. A से B में ऐसा संबंध जिसमें A के प्रत्येक element की B में केवल एक image हो, फलन कहलाता है।
+</div>
+</div>
+
+<div class="question">
+<b>Q3. Domain क्या है?</b>
+<div class="answer">
+Ans. Function के सभी possible input values का set domain कहलाता है।
+</div>
+</div>
+
+<div class="question">
+<b>Q4. Range क्या है?</b>
+<div class="answer">
+Ans. Function से वास्तव में प्राप्त output values का set range कहलाता है।
+</div>
+</div>
+
+<div class="question">
+<b>Q5. One-one function क्या है?</b>
+<div class="answer">
+Ans. जिसमें अलग-अलग inputs के images अलग-अलग हों, वह one-one function है।
+</div>
+</div>
+
+<div class="question">
+<b>Q6. Onto function क्या है?</b>
+<div class="answer">
+Ans. जिसमें codomain का प्रत्येक element किसी input की image हो, वह onto function है।
+</div>
+</div>
+
+<div class="question">
+<b>Q7. Identity function क्या है?</b>
+<div class="answer">
+Ans. f(x)=x वाला function identity function कहलाता है।
+</div>
+</div>
+
+<div class="question">
+<b>Q8. Composite function का formula लिखिए।</b>
+<div class="answer">
+Ans. (g∘f)(x)=g(f(x))
+</div>
+</div>
+
+<div class="question">
+<b>Q9. Reflexive relation की condition लिखिए।</b>
+<div class="answer">
+Ans. प्रत्येक a∈A के लिए (a,a)∈R होना चाहिए।
+</div>
+</div>
+
+<div class="question">
+<b>Q10. Symmetric relation की condition लिखिए।</b>
+<div class="answer">
+Ans. यदि (a,b)∈R है तो (b,a)∈R होना चाहिए।
+</div>
+</div>
+
+<div class="question">
+<b>Q11. Transitive relation की condition लिखिए।</b>
+<div class="answer">
+Ans. यदि (a,b)∈R और (b,c)∈R हो तो (a,c)∈R होना चाहिए।
+</div>
+</div>
+
+<div class="question">
+<b>Q12. Relation और function में अंतर लिखिए।</b>
+<div class="answer">
+Ans. प्रत्येक function एक relation होता है, लेकिन प्रत्येक relation function नहीं होता।
+</div>
+</div>
+
+</div>
+
+
+<!-- PYQ -->
+
+<div id="pyq" class="page">
+
+<h2>📝 PYQ / Exam Practice</h2>
+
+<p>यहाँ exam-oriented questions दिए गए हैं। इन्हें previous-paper practice के रूप में हल करो।</p>
+
+<div class="question">
+<b>Q1.</b> A={1,2,3}, B={4,5} के लिए A×B ज्ञात कीजिए।
+</div>
+
+<div class="question">
+<b>Q2.</b> दिए गए relation की reflexive property जाँचिए।
+</div>
+
+<div class="question">
+<b>Q3.</b> दिए गए relation की symmetric property जाँचिए।
+</div>
+
+<div class="question">
+<b>Q4.</b> दिए गए relation की transitive property जाँचिए।
+</div>
+
+<div class="question">
+<b>Q5.</b> दिए गए function का domain और range ज्ञात कीजिए।
+</div>
+
+<div class="question">
+<b>Q6.</b> जाँचिए कि दिया गया function one-one है या नहीं।
+</div>
+
+<div class="question">
+<b>Q7.</b> जाँचिए कि दिया गया function onto है या नहीं।
+</div>
+
+<div class="question">
+<b>Q8.</b> f(x) और g(x) दिए होने पर (g∘f)(x) ज्ञात कीजिए।
+</div>
+
+<div class="question">
+<b>Q9.</b> Identity function का उदाहरण दीजिए।
+</div>
+
+<div class="question">
+<b>Q10.</b> One-one और many-one functions में अंतर लिखिए।
+</div>
+
+<div class="question">
+<b>Q11.</b> Into और onto functions में अंतर समझाइए।
+</div>
+
+<div class="question">
+<b>Q12.</b> सिद्ध कीजिए कि दिया गया relation equivalence relation है।
+</div>
+
+</div>
+
+
+<!-- DPP -->
+
+<div id="dpp" class="page">
+
+<h2>✍️ DPP – 5 Sets</h2>
+
+<h3>DPP 1</h3>
+<p>
+1. A={1,2}, B={3,4} के लिए A×B ज्ञात करो।<br>
+2. Ordered pair की परिभाषा लिखो।<br>
+3. Relation की परिभाषा लिखो।<br>
+4. Domain और range में अंतर लिखो।
+</p>
+
+<h3>DPP 2</h3>
+<p>
+1. One-one function की पहचान करो।<br>
+2. Many-one function का उदाहरण दो।<br>
+3. Onto function की condition लिखो।<br>
+4. Into function समझाओ।
+</p>
+
+<h3>DPP 3</h3>
+<p>
+1. Reflexive relation की जाँच करो।<br>
+2. Symmetric relation की जाँच करो।<br>
+3. Transitive relation की जाँच करो।<br>
+4. Equivalence relation की conditions लिखो।
+</p>
+
+<h3>DPP 4</h3>
+<p>
+1. f(x)=2x+3 के लिए f(2) ज्ञात करो।<br>
+2. f(x)=x² के लिए f(3) ज्ञात करो।<br>
+3. दो functions का composite function ज्ञात करो।<br>
+4. Identity function का उदाहरण दो।
+</p>
+
+<h3>DPP 5</h3>
+<p>
+1. किसी function का domain ज्ञात करो।<br>
+2. उसका range ज्ञात करो।<br>
+3. Function one-one है या नहीं जाँचो।<br>
+4. Function onto है या नहीं जाँचो।
+</p>
+
+</div>
+
+
+<!-- REVISION -->
+
+<div id="revision" class="page">
+
+<h2>🔄 Quick Revision + Formulas</h2>
+
+<h3>मुख्य बातें</h3>
+
+<p>✔ Relation = A×B का subset</p>
+
+<p>✔ Function में हर input की केवल एक image होती है।</p>
+
+<p>✔ One-one → अलग input, अलग image</p>
+
+<p>✔ Many-one → अलग inputs की same image हो सकती है</p>
+
+<p>✔ Onto → पूरा codomain cover</p>
+
+<p>✔ Into → codomain का कुछ भाग बच सकता है</p>
+
+<p>✔ Identity function → f(x)=x</p>
+
+<p>✔ Composite function → (g∘f)(x)=g(f(x))</p>
+
+<h3>📌 Important Formulas</h3>
+
+<p>
+n(A×B)=n(A)×n(B)
+</p>
+
+<p>
+(g∘f)(x)=g(f(x))
+</p>
+
+<p>
+यदि f(a)=f(b) ⇒ a=b, तो f one-one है।
+</p>
+
+<p>
+Onto के लिए Range = Codomain
+</p>
+
+<h3>🎯 Exam Tip</h3>
+
+<p>
+इस chapter में Domain, Range, One-one, Onto, Relation की properties और Composite Function को अच्छी तरह practice करो।
+</p>
+
+</div>
+
+
+<button class="menu button back" onclick="goBack()">
+⬅️ वापस Chapter List
+</button>
+
+</div>
+
 
 <script>
 
-function notes() {
-document.getElementById("content").innerHTML = `
-<h2>📖 Notes</h2>
+function show(id){
 
-<h3>Relation</h3>
-<p>दो समुच्चय A और B के Cartesian product A × B के किसी भी उपसमुच्चय को A से B में Relation कहते हैं।</p>
+document.querySelectorAll(".page")
+.forEach(function(page){
+page.style.display="none";
+});
 
-<h3>Function</h3>
-<p>एक Relation को Function कहते हैं यदि domain के प्रत्येक element की codomain में केवल एक image हो।</p>
+document.getElementById(id)
+.style.display="block";
 
-<h3>Domain</h3>
-<p>Function के सभी input values का समुच्चय Domain कहलाता है।</p>
+window.scrollTo(0,0);
 
-<h3>Range</h3>
-<p>Function से प्राप्त output values का समुच्चय Range कहलाता है।</p>
-
-<h3>Codomain</h3>
-<p>जिस समुच्चय में function की images जाती हैं, वह Codomain कहलाता है।</p>
-
-<h3>One-One Function</h3>
-<p>यदि अलग-अलग inputs की images अलग-अलग हों, तो function One-One कहलाता है।</p>
-
-<h3>Many-One Function</h3>
-<p>यदि दो या अधिक अलग inputs की image समान हो, तो function Many-One कहलाता है।</p>
-
-<h3>Onto Function</h3>
-<p>यदि Range = Codomain हो, तो function Onto कहलाता है।</p>
-
-<h3>Into Function</h3>
-<p>यदि Range, Codomain का proper subset हो, तो function Into कहलाता है।</p>
-
-<h3>Bijective Function</h3>
-<p>जो function One-One और Onto दोनों हो, वह Bijective Function कहलाता है।</p>
-`;
 }
 
+function goBack(){
 
-function important() {
-document.getElementById("content").innerHTML = `
-<h2>⭐ Important Questions</h2>
+document.querySelectorAll(".page")
+.forEach(function(page){
+page.style.display="none";
+});
 
-<ol>
-<li>Relation की परिभाषा लिखिए।</li>
-<li>Function की परिभाषा लिखिए।</li>
-<li>Domain, Range और Codomain समझाइए।</li>
-<li>One-One Function क्या है?</li>
-<li>Many-One Function क्या है?</li>
-<li>Onto और Into Function में अंतर लिखिए।</li>
-<li>Bijective Function क्या है?</li>
-<li>Composite Function समझाइए।</li>
-<li>Inverse Function की परिभाषा लिखिए।</li>
-<li>दिए गए function का Domain और Range ज्ञात कीजिए।</li>
-</ol>
-`;
-}
+window.scrollTo(0,0);
 
-
-function pyq() {
-document.getElementById("content").innerHTML = `
-<h2>📝 PYQ Practice</h2>
-
-<ol>
-<li>दिए गए relation को function है या नहीं, जाँच कीजिए।</li>
-<li>दिए गए function का domain और range ज्ञात कीजिए।</li>
-<li>दिए गए function को One-One या Many-One निर्धारित कीजिए।</li>
-<li>जाँच कीजिए कि function Onto है या Into।</li>
-<li>Composite function ज्ञात कीजिए।</li>
-<li>दिए गए function का inverse ज्ञात कीजिए।</li>
-</ol>
-
-<p><b>Note:</b> यहाँ आगे MP Board के वास्तविक वर्षवार PYQ जोड़े जा सकते हैं।</p>
-`;
-}
-
-
-function dpp() {
-document.getElementById("content").innerHTML = `
-<h2>✍️ DPP Practice</h2>
-
-<ol>
-<li>यदि f(x) = 2x + 3 है, तो f(2) ज्ञात कीजिए।</li>
-
-<li>यदि f(x) = 3x - 5 है, तो f(4) ज्ञात कीजिए।</li>
-
-<li>One-One Function की परिभाषा लिखिए।</li>
-
-<li>Onto Function की शर्त लिखिए।</li>
-
-<li>यदि f(x) = x² है, तो f(3) ज्ञात कीजिए।</li>
-
-<li>(f ∘ g)(x) का सूत्र लिखिए।</li>
-</ol>
-`;
-}
-
-
-function revision() {
-document.getElementById("content").innerHTML = `
-<h2>🔄 Quick Revision</h2>
-
-<ul>
-<li>Relation → A × B का कोई उपसमुच्चय</li>
-<li>Function → प्रत्येक input की केवल एक image</li>
-<li>One-One → अलग input की अलग image</li>
-<li>Many-One → अलग input की समान image हो सकती है</li>
-<li>Onto → Range = Codomain</li>
-<li>Into → Range, Codomain का proper subset</li>
-<li>Bijective → One-One + Onto</li>
-<li>Composite Function → (f ∘ g)(x) = f(g(x))</li>
-</ul>
-`;
-}
-
-
-function formulas() {
-document.getElementById("content").innerHTML = `
-<h2>📌 Important Formulas</h2>
-
-<p><b>(f ∘ g)(x) = f(g(x))</b></p>
-
-<p><b>(g ∘ f)(x) = g(f(x))</b></p>
-
-<p><b>f⁻¹(f(x)) = x</b></p>
-
-<p><b>f(f⁻¹(x)) = x</b></p>
-
-<p>Bijective Function = One-One + Onto</p>
-`;
 }
 
 </script>
