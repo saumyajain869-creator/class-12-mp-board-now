@@ -1,104 +1,294 @@
+<
 <!DOCTYPE html>
-/a>
-<!DOCTYPE html>
-<html>
+<html lang="hi">
 <head>
-    <title>Class 12 Mathematics - MP Board</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
-            padding: 20px;
-        }
+<title>Class 12 Maths - MP Board</title>
 
-        h1 {
-            text-align: center;
-        }
+<style>
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f4f4;
+    margin:0;
+    padding:15px;
+}
 
-        button {
-            width: 100%;
-            padding: 15px;
-            margin: 7px 0;
-            font-size: 17px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-    </style>
+h1{
+    text-align:center;
+}
+
+.subtitle{
+    text-align:center;
+}
+
+.chapter{
+    background:white;
+    margin:10px 0;
+    padding:15px;
+    border-radius:10px;
+    box-shadow:0 2px 6px #ccc;
+}
+
+.chapter button{
+    width:100%;
+    padding:14px;
+    margin:5px 0;
+    border:0;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.content{
+    display:none;
+    background:#fff;
+    padding:15px;
+    margin-top:10px;
+    border-radius:8px;
+    line-height:1.6;
+}
+
+.section-buttons{
+    display:none;
+}
+
+.back{
+    background:#ddd !important;
+}
+</style>
 </head>
 
 <body>
 
-<h1>📐 Class 12 Mathematics</h1>
+<h1>📐 Class 12th Mathematics</h1>
 
-<p style="text-align:center;">
-MP Board | NCERT Based
-</p>
+<p class="subtitle">MP Board | NCERT Based</p>
 
 <hr>
 
-<h2>📚 Chapters</h2>
+<div id="chapters"></div>
 
-<p><a href="chapter1.html">
-<button>Chapter 1 – संबंध एवं फलन</button>
-</a></p>
+<script>
 
-<p><a href="chapter2.html">
-<button>Chapter 2 – प्रतिलोम त्रिकोणमितीय फलन</button>
-</a></p>
+const data = [
 
-<p><a href="chapter3.html">
-<button>Chapter 3 – आव्यूह</button>
-</a></p>
+{
+name:"Chapter 1 – संबंध एवं फलन",
+notes:"फलन में प्रत्येक input का एक निश्चित output होता है। संबंध और फलन के प्रकार जैसे one-one, many-one, onto और into महत्वपूर्ण हैं।",
+important:"1. फलन की परिभाषा लिखिए।<br>2. One-one तथा onto फलन समझाइए।<br>3. संयुक्त फलन ज्ञात कीजिए।",
+pyq:"पुराने प्रश्नों में फलन का प्रकार, domain-range तथा composite function से प्रश्न पूछे जाते हैं।",
+dpp:"Q1. f(x)=2x+3 का f(2) ज्ञात कीजिए।<br>Q2. किसी फलन का domain और range पहचानिए।",
+revision:"फलन = input से निश्चित output।<br>One-one = अलग inputs के अलग outputs।<br>Onto = पूरा codomain cover हो।",
+formula:"(g∘f)(x)=g(f(x))"
+},
 
-<p><a href="chapter4.html">
-<button>Chapter 4 – सारणिक</button>
-</a></p>
+{
+name:"Chapter 2 – प्रतिलोम त्रिकोणमितीय फलन",
+notes:"प्रतिलोम त्रिकोणमितीय फलनों में sin⁻¹x, cos⁻¹x और tan⁻¹x प्रमुख हैं। इनके principal values याद रखें।",
+important:"1. sin⁻¹x का principal value बताइए।<br>2. cos⁻¹x तथा tan⁻¹x के principal values लिखिए।",
+pyq:"Inverse trigonometric identities पर आधारित प्रश्न महत्वपूर्ण हैं।",
+dpp:"Q1. sin⁻¹(1) ज्ञात कीजिए।<br>Q2. tan⁻¹(1) ज्ञात कीजिए।",
+revision:"sin⁻¹x की range [-π/2, π/2] होती है।<br>cos⁻¹x की range [0,π] होती है।",
+formula:"sin⁻¹x + cos⁻¹x = π/2"
+},
 
-<p><a href="chapter5.html">
-<button>Chapter 5 – सांतत्य तथा अवकलनीयता</button>
-</a></p>
+{
+name:"Chapter 3 – आव्यूह",
+notes:"आव्यूह संख्याओं का rectangular arrangement है। Matrix के order, प्रकार, addition, multiplication और transpose महत्वपूर्ण हैं।",
+important:"1. Matrix का order क्या है?<br>2. Symmetric और Skew-symmetric matrix समझाइए।<br>3. Matrix multiplication कीजिए।",
+pyq:"Matrix multiplication, transpose और inverse से प्रश्न पूछे जाते हैं।",
+dpp:"Q1. [[1,2],[3,4]] का transpose लिखिए।<br>Q2. दो matrices का गुणन कीजिए।",
+revision:"यदि Aᵀ=A तो symmetric matrix।<br>यदि Aᵀ=-A तो skew-symmetric matrix।",
+formula:"(AB)ᵀ = BᵀAᵀ"
+},
 
-<p><a href="chapter6.html">
-<button>Chapter 6 – अवकलज के अनुप्रयोग</button>
-</a></p>
+{
+name:"Chapter 4 – सारणिक",
+notes:"Determinant square matrix से संबंधित संख्या है। 2×2 और 3×3 determinant तथा properties महत्वपूर्ण हैं।",
+important:"1. Determinant की परिभाषा।<br>2. Determinant की properties।<br>3. Area निकालने में determinant का प्रयोग।",
+pyq:"2×2 और 3×3 determinants के numerical प्रश्न महत्वपूर्ण हैं।",
+dpp:"Q1. |a b; c d| का मान लिखिए।<br>Q2. determinant की कोई दो properties लिखिए।",
+revision:"2×2 determinant = ad-bc",
+formula:"|a b; c d| = ad-bc"
+},
 
-<p><a href="chapter7.html">
-<button>Chapter 7 – समाकलन</button>
-</a></p>
+{
+name:"Chapter 5 – सांतत्य तथा अवकलनीयता",
+notes:"Continuity और differentiability calculus के महत्वपूर्ण concepts हैं। L'Hospital Rule भी limits में उपयोगी है।",
+important:"1. Continuity की condition।<br>2. Differentiability की condition।<br>3. L'Hospital Rule।",
+pyq:"Limit, continuity और differentiation पर numerical प्रश्न पूछे जाते हैं।",
+dpp:"Q1. lim x→0 sinx/x ज्ञात कीजिए।<br>Q2. किसी function की continuity जाँचिए।",
+revision:"Differentiable function हमेशा continuous होता है। लेकिन continuous function जरूरी नहीं कि differentiable हो।",
+formula:"L'Hospital: lim f(x)/g(x) = lim f'(x)/g'(x), जब उचित conditions हों।"
+},
 
-<p><a href="chapter8.html">
-<button>Chapter 8 – समाकलनों के अनुप्रयोग</button>
-</a></p>
+{
+name:"Chapter 6 – अवकलज के अनुप्रयोग",
+notes:"Derivatives का प्रयोग increasing-decreasing function, maxima-minima और tangent-normal में होता है।",
+important:"1. Increasing और decreasing function।<br>2. Maxima और minima।<br>3. Tangent और normal।",
+pyq:"Maxima-minima और increasing-decreasing के questions महत्वपूर्ण हैं।",
+dpp:"Q1. f'(x)>0 होने पर function का व्यवहार बताइए।<br>Q2. दिए function के critical points ज्ञात कीजिए।",
+revision:"f'(x)>0 → increasing<br>f'(x)<0 → decreasing",
+formula:"Tangent slope = dy/dx"
+},
 
-<p><a href="chapter9.html">
-<button>Chapter 9 – अवकल समीकरण</button>
-</a></p>
+{
+name:"Chapter 7 – समाकलन",
+notes:"Integration differentiation की reverse process है। Indefinite और definite integration दोनों महत्वपूर्ण हैं।",
+important:"1. Basic integration formulas।<br>2. Substitution method।<br>3. Integration by parts।",
+pyq:"Standard integrals और definite integrals से numerical पूछे जाते हैं।",
+dpp:"Q1. ∫x dx ज्ञात कीजिए।<br>Q2. ∫cosx dx ज्ञात कीजिए।",
+revision:"Integration को differentiation की reverse process माना जाता है।",
+formula:"∫xⁿ dx = xⁿ⁺¹/(n+1)+C"
+},
 
-<p><a href="chapter10.html">
-<button>Chapter 10 – सदिश बीजगणित</button>
-</a></p>
+{
+name:"Chapter 8 – समाकलनों के अनुप्रयोग",
+notes:"Definite integration की सहायता से curves के नीचे का area निकाला जाता है।",
+important:"1. Area under curve।<br>2. x-axis और y-axis के बीच area।<br>3. Definite integral का उपयोग।",
+pyq:"दो curves के बीच area निकालने के प्रश्न महत्वपूर्ण हैं।",
+dpp:"Q1. y=x और x-axis के बीच area का setup लिखिए।",
+revision:"Area निकालते समय upper और lower curve की पहचान करें।",
+formula:"Area = ∫(upper curve - lower curve) dx"
+},
 
-<p><a href="chapter11.html">
-<button>Chapter 11 – त्रिविमीय ज्यामिति</button>
-</a></p>
+{
+name:"Chapter 9 – अवकल समीकरण",
+notes:"जिस equation में dependent variable और उसके derivatives हों उसे differential equation कहते हैं।",
+important:"1. Differential equation की order।<br>2. Degree।<br>3. Differential equation का solution।",
+pyq:"Variable separable method और standard differential equations से प्रश्न आते हैं।",
+dpp:"Q1. differential equation की order बताइए।<br>Q2. variable separable method का प्रयोग कीजिए।",
+revision:"Order = highest order derivative की order।",
+formula:"dy/dx = f(x)g(y)"
+},
 
-<p><a href="chapter12.html">
-<button>Chapter 12 – रैखिक प्रोग्रामन</button>
-</a></p>
+{
+name:"Chapter 10 – सदिश बीजगणित",
+notes:"Vector में magnitude और direction दोनों होते हैं। Dot product और cross product महत्वपूर्ण हैं।",
+important:"1. Vector की परिभाषा।<br>2. Unit vector।<br>3. Dot product और cross product।",
+pyq:"Vectors के magnitude, dot product और angle पर प्रश्न पूछे जाते हैं।",
+dpp:"Q1. vector का magnitude ज्ञात कीजिए।<br>Q2. दो vectors का dot product निकालिए।",
+revision:"Unit vector का magnitude 1 होता है।",
+formula:"a·b = |a||b|cosθ"
+},
 
-<p><a href="chapter13.html">
-<button>Chapter 13 – प्रायिकता</button>
-</a></p>
+{
+name:"Chapter 11 – त्रिविमीय ज्यामिति",
+notes:"3D geometry में direction ratios, direction cosines, line और plane महत्वपूर्ण topics हैं।",
+important:"1. Direction cosines।<br>2. Equation of line।<br>3. Plane की equation।",
+pyq:"Line और plane के बीच angle तथा distance से प्रश्न महत्वपूर्ण हैं।",
+dpp:"Q1. direction cosines की condition लिखिए।<br>Q2. दो lines के बीच angle का formula लिखिए।",
+revision:"Direction cosines के लिए l²+m²+n²=1।",
+formula:"l²+m²+n²=1"
+},
 
-<hr>
+{
+name:"Chapter 12 – रैखिक प्रोग्रामन",
+notes:"Linear Programming में objective function और constraints के आधार पर maximum या minimum value निकाली जाती है।",
+important:"1. Objective function।<br>2. Constraints।<br>3. Feasible region।",
+pyq:"Graph बनाकर maximum/minimum value निकालने वाले प्रश्न महत्वपूर्ण हैं।",
+dpp:"Q1. objective function पहचानिए।<br>Q2. दिए constraints का feasible region बनाइए।",
+revision:"पहले constraints का graph बनाएं, फिर feasible region और corner points देखें।",
+formula:"Optimum value सामान्यतः corner points पर check की जाती है।"
+},
 
-<p style="text-align:center;">
-© Class 12th MP Board Now
-</p>
+{
+name:"Chapter 13 – प्रायिकता",
+notes:"Probability में conditional probability, Bayes theorem और independent events महत्वपूर्ण हैं।",
+important:"1. Conditional probability।<br>2. Bayes theorem।<br>3. Independent events।",
+pyq:"Conditional probability और Bayes theorem के numerical प्रश्न महत्वपूर्ण हैं।",
+dpp:"Q1. P(A|B) का formula लिखिए।<br>Q2. independent events की condition लिखिए।",
+revision:"Conditional probability में एक event के होने की condition पर दूसरे event की probability निकाली जाती है।",
+formula:"P(A|B)=P(A∩B)/P(B)"
+}
+
+];
+
+const box = document.getElementById("chapters");
+
+data.forEach((ch,index)=>{
+
+    const div=document.createElement("div");
+    div.className="chapter";
+
+    div.innerHTML=`
+        <button onclick="openChapter(${index})">
+            📚 ${ch.name}
+        </button>
+
+        <div id="sections${index}" class="section-buttons">
+
+            <button onclick="showContent(${index},'notes')">
+                📖 Notes
+            </button>
+
+            <button onclick="showContent(${index},'important')">
+                ⭐ Important Questions
+            </button>
+
+            <button onclick="showContent(${index},'pyq')">
+                📝 PYQ
+            </button>
+
+            <button onclick="showContent(${index},'dpp')">
+                ✍️ DPP
+            </button>
+
+            <button onclick="showContent(${index},'revision')">
+                🔄 Quick Revision
+            </button>
+
+            <button onclick="showContent(${index},'formula')">
+                📌 Formulas
+            </button>
+
+            <div id="content${index}" class="content"></div>
+
+        </div>
+    `;
+
+    box.appendChild(div);
+});
+
+
+function openChapter(index){
+
+    document.querySelectorAll(".section-buttons")
+    .forEach(x=>x.style.display="none");
+
+    document.getElementById("sections"+index)
+    .style.display="block";
+
+    document.getElementById("content"+index)
+    .style.display="none";
+}
+
+
+function showContent(index,type){
+
+    const content=document.getElementById("content"+index);
+
+    content.innerHTML="<h3>"+title(type)+"</h3><p>"+
+        data[index][type]+"</p>";
+
+    content.style.display="block";
+}
+
+
+function title(type){
+
+    if(type=="notes") return "📖 Notes";
+    if(type=="important") return "⭐ Important Questions";
+    if(type=="pyq") return "📝 PYQ";
+    if(type=="dpp") return "✍️ DPP";
+    if(type=="revision") return "🔄 Quick Revision";
+    if(type=="formula") return "📌 Formulas";
+
+}
+
+</script>
 
 </body>
     </html>
-</body>
-</html>
