@@ -1,34 +1,185 @@
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>Chapter 1 - Relations and Functions</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            margin: 6px 0;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        #content {
+            background: white;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+    </style>
 </head>
 
 <body>
 
-<h1>📚 Chapter 1 – Relations and Functions</h1>
-<p>Class 12th Mathematics | MP Board | NCERT Based</p>
+<h1>📚 Chapter 1</h1>
+<h2>Relations and Functions</h2>
 
-<hr>
+<button onclick="notes()">📖 Notes</button>
+<button onclick="important()">⭐ Important Questions</button>
+<button onclick="pyq()">📝 PYQ</button>
+<button onclick="dpp()">✍️ DPP Practice</button>
+<button onclick="revision()">🔄 Quick Revision</button>
+<button onclick="formulas()">📌 Formulas</button>
 
-<h2>📖 Study Material</h2>
+<div id="content">
+    <p>ऊपर किसी भी button पर tap करके content खोलें.</p>
+</div>
 
-<p><a href="notes.html"><button>📖 Notes</button></a></p>
+<script>
 
-<p><a href="important.html"><button>⭐ Important Questions</button></a></p>
+function notes() {
+document.getElementById("content").innerHTML = `
+<h2>📖 Notes</h2>
 
-<p><a href="pyq.html"><button>📝 PYQ</button></a></p>
+<h3>Relation</h3>
+<p>दो समुच्चय A और B के Cartesian product A × B के किसी भी उपसमुच्चय को A से B में Relation कहते हैं।</p>
 
-<p><a href="dpp.html"><button>✍️ DPP Practice</button></a></p>
+<h3>Function</h3>
+<p>एक Relation को Function कहते हैं यदि domain के प्रत्येक element की codomain में केवल एक image हो।</p>
 
-<p><a href="revision.html"><button>🔄 Quick Revision</button></a></p>
+<h3>Domain</h3>
+<p>Function के सभी input values का समुच्चय Domain कहलाता है।</p>
 
-<p><a href="formulas.html"><button>📌 Formulas</button></a></p>
+<h3>Range</h3>
+<p>Function से प्राप्त output values का समुच्चय Range कहलाता है।</p>
 
-<hr>
+<h3>Codomain</h3>
+<p>जिस समुच्चय में function की images जाती हैं, वह Codomain कहलाता है।</p>
 
-<p>© Class 12th MP Board Now</p>
+<h3>One-One Function</h3>
+<p>यदि अलग-अलग inputs की images अलग-अलग हों, तो function One-One कहलाता है।</p>
+
+<h3>Many-One Function</h3>
+<p>यदि दो या अधिक अलग inputs की image समान हो, तो function Many-One कहलाता है।</p>
+
+<h3>Onto Function</h3>
+<p>यदि Range = Codomain हो, तो function Onto कहलाता है।</p>
+
+<h3>Into Function</h3>
+<p>यदि Range, Codomain का proper subset हो, तो function Into कहलाता है।</p>
+
+<h3>Bijective Function</h3>
+<p>जो function One-One और Onto दोनों हो, वह Bijective Function कहलाता है।</p>
+`;
+}
+
+
+function important() {
+document.getElementById("content").innerHTML = `
+<h2>⭐ Important Questions</h2>
+
+<ol>
+<li>Relation की परिभाषा लिखिए।</li>
+<li>Function की परिभाषा लिखिए।</li>
+<li>Domain, Range और Codomain समझाइए।</li>
+<li>One-One Function क्या है?</li>
+<li>Many-One Function क्या है?</li>
+<li>Onto और Into Function में अंतर लिखिए।</li>
+<li>Bijective Function क्या है?</li>
+<li>Composite Function समझाइए।</li>
+<li>Inverse Function की परिभाषा लिखिए।</li>
+<li>दिए गए function का Domain और Range ज्ञात कीजिए।</li>
+</ol>
+`;
+}
+
+
+function pyq() {
+document.getElementById("content").innerHTML = `
+<h2>📝 PYQ Practice</h2>
+
+<ol>
+<li>दिए गए relation को function है या नहीं, जाँच कीजिए।</li>
+<li>दिए गए function का domain और range ज्ञात कीजिए।</li>
+<li>दिए गए function को One-One या Many-One निर्धारित कीजिए।</li>
+<li>जाँच कीजिए कि function Onto है या Into।</li>
+<li>Composite function ज्ञात कीजिए।</li>
+<li>दिए गए function का inverse ज्ञात कीजिए।</li>
+</ol>
+
+<p><b>Note:</b> यहाँ आगे MP Board के वास्तविक वर्षवार PYQ जोड़े जा सकते हैं।</p>
+`;
+}
+
+
+function dpp() {
+document.getElementById("content").innerHTML = `
+<h2>✍️ DPP Practice</h2>
+
+<ol>
+<li>यदि f(x) = 2x + 3 है, तो f(2) ज्ञात कीजिए।</li>
+
+<li>यदि f(x) = 3x - 5 है, तो f(4) ज्ञात कीजिए।</li>
+
+<li>One-One Function की परिभाषा लिखिए।</li>
+
+<li>Onto Function की शर्त लिखिए।</li>
+
+<li>यदि f(x) = x² है, तो f(3) ज्ञात कीजिए।</li>
+
+<li>(f ∘ g)(x) का सूत्र लिखिए।</li>
+</ol>
+`;
+}
+
+
+function revision() {
+document.getElementById("content").innerHTML = `
+<h2>🔄 Quick Revision</h2>
+
+<ul>
+<li>Relation → A × B का कोई उपसमुच्चय</li>
+<li>Function → प्रत्येक input की केवल एक image</li>
+<li>One-One → अलग input की अलग image</li>
+<li>Many-One → अलग input की समान image हो सकती है</li>
+<li>Onto → Range = Codomain</li>
+<li>Into → Range, Codomain का proper subset</li>
+<li>Bijective → One-One + Onto</li>
+<li>Composite Function → (f ∘ g)(x) = f(g(x))</li>
+</ul>
+`;
+}
+
+
+function formulas() {
+document.getElementById("content").innerHTML = `
+<h2>📌 Important Formulas</h2>
+
+<p><b>(f ∘ g)(x) = f(g(x))</b></p>
+
+<p><b>(g ∘ f)(x) = g(f(x))</b></p>
+
+<p><b>f⁻¹(f(x)) = x</b></p>
+
+<p><b>f(f⁻¹(x)) = x</b></p>
+
+<p>Bijective Function = One-One + Onto</p>
+`;
+}
+
+</script>
 
 </body>
-</html>
+    </html>
